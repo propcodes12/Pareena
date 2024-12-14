@@ -1,0 +1,89 @@
+02bb0dd0afa4fc7bf65531403c7b859c97d0c058
+1096e3fe49073c673088a232a10c01fa7930c77e
+994ee09ae922d09cec614a7bbd51d37251a2b2ee
+5c903ed5b7b096f7755b321bbb8128639581ba86 
+be960e3c6fae9fac2cac41f27ce4b9d07b6a53dd 
+d9d245e7a28e8f0610b74e347252e85808349d79 
+bffb357a7122523ec94045523758c4b825b448ef .eslintrc.json
+d32cc78b89fc9af2b1caf304864e10f041df05e6 .gitignore
+66bb426ffe6ec9f5d829fccff91afcf9f2d16810 README.md
+75dc0203205d4dd0546f9031ebee59679bb59d26 app
+936e83420c4d9aac7d6d518e5415394bdd51e0a1 app
+ac242ac7abd6af95214728a60f70a4ab7d091837 app
+718d6fea4835ec2d246af9800eddb7ffb276240c app/favicon.ico
+fcb741a341df889205f9868e01cdef51cc530ae9 app/fonts
+f2ae185cbfd16946a534d819e9eb03924abbcc49 app/fonts/GeistMonoVF.woff
+1b62daacff96dad6584e71cd962051b82957c313 app/fonts/GeistVF.woff
+6b717ad346d3dff8914e9545038c799226d59c89 app/globals.css
+b05fec0814056b3a851524ab02dc07e4353197e3 app/globals.css
+97433dcb9903ca06e153d8c7ba1dfa6854eb6aa3 app/layout.js
+9800bf8dde1c4ef9a17a143eb622b4d56a089226 app/layout.js
+4c7ad64a9ccf5a23430dcbdb3c33c711ed4fcbe7 app/page.js
+e226e09c0b7816a5f5a9a95c8fd2a9a42e21dfe9 app/page.js
+ebfe70329e18e246eb3c94e4f92ac02b0784ddc3 app/page.js
+2a2e4b3bf8ba1c86d96fc2f5786597ad77a0e5e9 jsconfig.json
+4678774e6d606704bce1897a5dab960cd798bf66 next.config.mjs
+2201cf672f4f8cc78ae80269834dfff765cffe0d package-lock.json
+e8b71931a182b8d1619060c04149b74ca6e52c83 package-lock.json
+3ed008fa4a947664149ac2820ecd2e9677f45853 package.json
+f594ec611ab9f5c8b019fadf220f8e2f6357ea92 package.json
+1a69fd2a450afc3bf47e08b22c149190df0ffdb4 postcss.config.mjs
+ac2364135f3a4e3b92339a3791275f33449a167f public
+c88f389de09f418da376598c42e8788d4fb6d172 public
+d06782e893fd657c05358928dc330d351b13efbe public
+86bc68a01f37558639d3fb087da861f2541d6228 public/Pareena Coban Brochure  new 28-03-2024_page-0001.jpg
+a77f44454458458f4a1fe2ea7b186c3315b2cfc4 public/Pareena Coban Brochure  new 28-03-2024_page-0002.jpg
+ba18733dcd0d9983dc2875cb66d5e5eada415880 public/Pareena Coban Brochure  new 28-03-2024_page-0003.jpg
+0a6d7b74c9e0b0abdcab2296e9433316482f2786 public/Pareena Coban Brochure  new 28-03-2024_page-0004.jpg
+8d35437ea09b12c16fd3af80c490e135c0b51854 public/Pareena Coban Brochure  new 28-03-2024_page-0005.jpg
+be990ee5901c2b80b7ba1daf33aea3e977924a9f public/Pareena Coban Brochure  new 28-03-2024_page-0006.jpg
+599a0f0d39196b8271725fbf94381cff5d6db6b5 public/Pareena Coban Brochure  new 28-03-2024_page-0007.jpg
+781eee08abd61fb795a3280aa197969315f30d6f public/Pareena Coban Brochure  new 28-03-2024_page-0008.jpg
+ae74121b0e86f47f622f41c94e8c362c8fdf1c05 public/Pareena Coban Brochure  new 28-03-2024_page-0009.jpg
+cc7740c27fa92c9949bb94171c386409bd3c2615 public/Pareena Coban Brochure  new 28-03-2024_page-0010.jpg
+3cd05e497995823a41e981652a5b0d488926ddbd public/Pareena Coban Brochure  new 28-03-2024_page-0011.jpg
+c6444267d0cd0aabe8168f9e870fd77f87dc5318 public/Pareena Coban Brochure  new 28-03-2024_page-0012.jpg
+82bdd3c44a27eac7755dc1fc7edf6f5c18b3ffea public/Pareena Coban Brochure  new 28-03-2024_page-0013.jpg
+861fef6a77f35543f159adaeb7e281dea41667e1 public/Pareena Coban Brochure  new 28-03-2024_page-0014.jpg
+02f5ba7a8d4075520db352c041e8eab292689dcf public/Pareena Coban Brochure  new 28-03-2024_page-0015.jpg
+7dd2a3f0ac894a176b95a583972c77055d8ba260 public/Pareena Coban Brochure  new 28-03-2024_page-0016.jpg
+f28bba3b2518a2a62186e9a8df6cd4f90143910d public/Pareena Coban Brochure  new 28-03-2024_page-0017.jpg
+67a8e4a6f85417a683d63acd241a98333e0c14ac public/Pareena Coban Brochure  new 28-03-2024_page-0018.jpg
+b6907d89356af881f9c9b886b0bcce9fcafee43b public/Pareena Coban Brochure  new 28-03-2024_page-0019.jpg
+e4ab52f4367944c052343d1552b099399b388639 public/Pareena Coban Brochure  new 28-03-2024_page-0020.jpg
+527f159ba02d1a9fa2de59c26842c8bee9ab7092 public/Pareena Coban Brochure  new 28-03-2024_page-0021.jpg
+982ad4c26bd05330e5ab80f8f37a8ec70ecc0bad public/Pareena Coban Brochure  new 28-03-2024_page-0022.jpg
+e8032278567b39f81626f3b01c799d5f85f2efb0 public/Pareena Coban Brochure  new 28-03-2024_page-0023.jpg
+be97169e5adbc66360ccbbedf031c184a1b37db5 public/Pareena Coban Brochure  new 28-03-2024_page-0024.jpg
+5182e145afbd65d9d87d6f61f0b57b80a1dc20e0 public/Pareena Coban Brochure  new 28-03-2024_page-0025.jpg
+3a9e173f59e4eab4b230403ae6af8292d8336056 public/Pareena Coban Brochure  new 28-03-2024_page-0026.jpg
+66859fe7f2e7183e7588d83f48c20b457cc88a4c public/Pareena Coban Brochure  new 28-03-2024_page-0027.jpg
+a3ec6760de89b7dd9c7ff42924b6554d295ee9c6 public/Pareena Coban Brochure  new 28-03-2024_page-0028.jpg
+400e487434bb870bed3b3ef052fbaad82daf1ddf public/Pareena Coban Brochure  new 28-03-2024_page-0029.jpg
+33591fea51e4c3ca4176c473268b2b5b084b1afc public/Pareena Coban Brochure  new 28-03-2024_page-0030.jpg
+004145cddf3f9db91b57b9cb596683c8eb420862 public/file.svg
+567f17b0d7c7fb662c16d4357dd74830caf2dccb public/globe.svg
+9d9aefb0198a45d490d02fbec1ffd57e2d5611ae public/jpg
+c9733505cc05fc70a271a1517045f681d7d952fd public/jpg/Prelaunch Opportunity Document_Codename Mumbai T3 Aero-Estate_page-0001.jpg
+d0912a86683b0712d3e34f11b7a358388672002b public/jpg/Prelaunch Opportunity Document_Codename Mumbai T3 Aero-Estate_page-0002.jpg
+ddcdc7e150f4282a5201638a73a5852bea5d4427 public/jpg/Prelaunch Opportunity Document_Codename Mumbai T3 Aero-Estate_page-0003.jpg
+c029fda1405cfd80ea2134b4723e392cfedace12 public/jpg/Prelaunch Opportunity Document_Codename Mumbai T3 Aero-Estate_page-0004.jpg
+eada0c53c11d08c3ee43bdbcfc8a05833d5679d9 public/jpg/Prelaunch Opportunity Document_Codename Mumbai T3 Aero-Estate_page-0005.jpg
+c2a9a48ae2d209038eba41207b2d376f1cdf5727 public/jpg/Prelaunch Opportunity Document_Codename Mumbai T3 Aero-Estate_page-0006.jpg
+3c9fca0bd9710964240362bebe66723d7122ce9b public/jpg/Prelaunch Opportunity Document_Codename Mumbai T3 Aero-Estate_page-0007.jpg
+d6ec8560d33c84f25175920c12325cbf1bc91b97 public/jpg/Prelaunch Opportunity Document_Codename Mumbai T3 Aero-Estate_page-0008.jpg
+6833867a9ba17a969b0f02e24a8f018d0eb54a5b public/jpg/Prelaunch Opportunity Document_Codename Mumbai T3 Aero-Estate_page-0009.jpg
+abd6dd044180bca00ac31d82facaed87929869ff public/jpg/Prelaunch Opportunity Document_Codename Mumbai T3 Aero-Estate_page-0010.jpg
+8e65dc4c5100c3f1556ec5e544db71dc1076fbee public/jpg/Prelaunch Opportunity Document_Codename Mumbai T3 Aero-Estate_page-0011.jpg
+184ea660260a5fdaa0af14f88c446a9bde47cf33 public/jpg/Prelaunch Opportunity Document_Codename Mumbai T3 Aero-Estate_page-0012.jpg
+8bc2083b6fd097b000cdde812f8bdc3710191fb1 public/jpg/Prelaunch Opportunity Document_Codename Mumbai T3 Aero-Estate_page-0013.jpg
+4590f73922eaf7d8b9c1320e1b5e8bf5f790396b public/jpg/Prelaunch Opportunity Document_Codename Mumbai T3 Aero-Estate_page-0014.jpg
+db97a62b65df55172ef5f6a7158ca7750af5919c public/jpg/Prelaunch Opportunity Document_Codename Mumbai T3 Aero-Estate_page-0015.jpg
+f1d9e4c8bb77463c53d089bd1293e387c0b9968d public/jpg/Prelaunch Opportunity Document_Codename Mumbai T3 Aero-Estate_page-0016.jpg
+2c52a9507c877f3a2c71677560f03d45a8162c90 public/jpg/Prelaunch Opportunity Document_Codename Mumbai T3 Aero-Estate_page-0017.jpg
+622544c0435d07415552a19f704ae537aff41421 public/jpg/Prelaunch Opportunity Document_Codename Mumbai T3 Aero-Estate_page-0018.jpg
+568e2d45b42e2b29d2408682638295907bbf7967 public/k.mp4
+5174b28c565c285e3e312ec5178be64fbeca8398 public/next.svg
+77053960334e2e34dc584dea8019925c3b4ccca9 public/vercel.svg
+b2b2a44f6ebc70c450043c05a002e7a93ba5d651 public/window.svg
+af99692719e72e11241f0e9c9fe8838b86867098 tailwind.config.js

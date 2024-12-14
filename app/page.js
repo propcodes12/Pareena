@@ -143,7 +143,7 @@ const property = {
   description:
     "Located in the heart of the city, this 2 BHK luxury apartment offers a perfect blend of comfort and convenience.",
   price: "₹85 Lakhs",
-  sitePlan: ["/Plots in Mumbai.jpg", "/Abhinandan_lodha.jpg"],
+  sitePlan: ["/PlotsinMumbai.jpg", "/Abhinandanlodha.jpg"],
 
   amenities: [
     {
@@ -464,7 +464,7 @@ const AmenitiesSection = ({ toggleContactModal }) => {
         </h2>
 
         {/* Amenities List */}
-        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12" onClick={toggleContactModal} >
+        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12" >
           {property.amenities.map((amenity, index) => (
             <li
               key={index}

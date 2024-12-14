@@ -4,6 +4,11 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import {
   Home,
+  Eye,
+  Layout,
+  List,
+  Image,
+  Map,
   User,
   Mail,
   Phone,
@@ -11,8 +16,9 @@ import {
   CheckCircle,
   X,
   Menu,
-  MapPin, 
+  MapPin,
   ArrowUp,
+  MessageCircle,
 } from "lucide-react";
 import { useForm } from "react-hook-form";
 import useWeb3Forms from "@web3forms/react";
@@ -38,16 +44,16 @@ const Header = ({ toggleContactModal }) => {
   };
 
   return (
-    <header className="bg-gradient-to-r from-[#1E2A47] to-[#4B6584] shadow-xl sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 py-6 flex justify-between items-center space-x-8">
+    <header className="bg-gradient-to-r from-[#1D3557] to-[#457B9D] sticky top-0 z-50">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 py-6 flex justify-between items-center">
         {/* Logo */}
-        <div className="text-white text-4xl font-bold flex items-center space-x-2">
-          <Home className="w-8 h-8 text-gradient-to-r from-[#1A80B9] to-[#34B3F1]" />
-          <span className="text-xl font-semibold">Pareena</span>
+        <div className="text-white text-3xl font-extrabold flex items-center space-x-3">
+          <Home className="w-8 h-8 text-[#F1FAEE]" />
+          <span className="font-serif text-lg">Abhinandan Lodha</span>
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden sm:flex space-x-8">
+        <nav className="hidden sm:flex space-x-10">
           {["overview", "site-plan", "amenities", "gallery", "location"].map((section) => (
             <a
               key={section}
@@ -56,11 +62,10 @@ const Header = ({ toggleContactModal }) => {
                 e.preventDefault();
                 handleSetActive(section);
               }}
-              className={`text-lg font-medium text-white hover:text-[#34B3F1] transition-all duration-300 ${
-                activeSection === section
-                  ? "border-b-2 border-[#34B3F1] pb-2"
-                  : ""
-              }`}
+              className={`text-lg font-medium text-white hover:text-[#F1FAEE] transition-all duration-300 ${activeSection === section
+                ? "border-b-2 border-[#F1FAEE] pb-2"
+                : ""
+                }`}
             >
               <span className="capitalize">{section.replace("-", " ")}</span>
             </a>
@@ -70,14 +75,14 @@ const Header = ({ toggleContactModal }) => {
         {/* Contact Us Button (Desktop) */}
         <button
           onClick={toggleContactModal}
-          className="hidden sm:block bg-gradient-to-r from-[#34B3F1] to-[#1A80B9] text-white px-6 py-3 rounded-lg font-semibold hover:from-[#1A80B9] hover:to-[#34B3F1] transition-all duration-300"
+          className="hidden sm:block bg-gradient-to-r from-[#F1FAEE] to-[#A8DADC] text-[#1D3557] px-6 py-3 rounded-lg font-semibold hover:bg-[#A8DADC] hover:text-[#1D3557] transition-all duration-300"
         >
           Contact Us
         </button>
 
         {/* Hamburger Icon for Mobile */}
         <button
-          className="sm:hidden text-white hover:text-[#34B3F1] focus:outline-none"
+          className="sm:hidden text-white hover:text-[#F1FAEE] focus:outline-none"
           onClick={handleMenuToggle}
         >
           {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -87,13 +92,13 @@ const Header = ({ toggleContactModal }) => {
       {/* Off-Canvas Mobile Menu */}
       {isMenuOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 z-40 sm:hidden">
-          <div className="absolute top-0 left-0 w-72 h-full bg-white shadow-xl flex flex-col p-6">
+          <div className="absolute top-0 left-0 w-72 h-full bg-[#1D3557] shadow-xl flex flex-col p-6">
             <div className="flex justify-between items-center">
-              <div className="text-[#1E2A47] text-3xl font-bold">
+              <div className="text-[#F1FAEE] text-3xl font-extrabold">
                 Abhinandan Lodha
               </div>
               <button
-                className="text-[#34B3F1] hover:text-[#1A80B9]"
+                className="text-[#F1FAEE] hover:text-[#A8DADC]"
                 onClick={handleMenuToggle}
               >
                 <X className="w-6 h-6" />
@@ -108,11 +113,10 @@ const Header = ({ toggleContactModal }) => {
                     e.preventDefault();
                     handleSetActive(section);
                   }}
-                  className={`text-lg font-medium ${
-                    activeSection === section
-                      ? "text-[#34B3F1]"
-                      : "text-[#1E2A47] hover:text-[#34B3F1]"
-                  }`}
+                  className={`text-lg font-medium ${activeSection === section
+                    ? "text-[#F1FAEE]"
+                    : "text-[#A8DADC] hover:text-[#F1FAEE]"
+                    }`}
                 >
                   <span className="capitalize">{section.replace("-", " ")}</span>
                 </a>
@@ -122,7 +126,7 @@ const Header = ({ toggleContactModal }) => {
             <div className="mt-8">
               <button
                 onClick={toggleContactModal}
-                className="w-full bg-gradient-to-r from-[#34B3F1] to-[#1A80B9] text-white px-6 py-3 rounded-lg font-semibold hover:from-[#1A80B9] hover:to-[#34B3F1] transition-all duration-300"
+                className="w-full bg-gradient-to-r from-[#F1FAEE] to-[#A8DADC] text-[#1D3557] px-6 py-3 rounded-lg font-semibold hover:bg-[#A8DADC] hover:text-[#1D3557] transition-all duration-300"
               >
                 Contact Us
               </button>
@@ -139,7 +143,8 @@ const property = {
   description:
     "Located in the heart of the city, this 2 BHK luxury apartment offers a perfect blend of comfort and convenience.",
   price: "₹85 Lakhs",
-  sitePlan: "/Pareena Coban Brochure  new 28-03-2024_page-0028.jpg",
+  sitePlan: ["/Plots in Mumbai.jpg", "/Abhinandan_lodha.jpg"],
+
   amenities: [
     {
       name: "Swimming Pool",
@@ -168,68 +173,75 @@ const property = {
     {
       name: "24/7 Security",
       gallery: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcy-rZQXQgtru6wAlhb22zOPTPKoi1P1_3qg&s",
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSBf-KYHS7ezvi3G5xxV_hIgsovQaMpRseVA&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSBf-KYHS7ezvi3G5xxV_hIgsovQaMpRseVA&s",
       ],
       description: "Your safety is our priority with round-the-clock security services."
     },
     {
       name: "Garden",
       gallery: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSs8UUh3X6XTvzasuWkEbdwA8XQEumYH4FDxw&s",
-                 "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6s-sSg5MaLXx2C1IxD4okDqY2Uxevvtj_4w&s"
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6s-sSg5MaLXx2C1IxD4okDqY2Uxevvtj_4w&s"
       ],
       description: "Enjoy the serene beauty of our lush, landscaped gardens."
     },
     {
       name: "Parking",
       gallery: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKxcM7TmRb7XqjBSDHbopyh5WWVPyNOQ4TSw&s",
-                 "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRr53S4fPSginyjsp695iVRafghFA4jB3FspA&s",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRr53S4fPSginyjsp695iVRafghFA4jB3FspA&s",
       ],
       description: "Ample parking space with secure and convenient access."
     },
   ],
-  
+
   gallery: {
     "living-room": [
-      "/Pareena Coban Brochure  new 28-03-2024_page-0001.jpg",
-      "/Pareena Coban Brochure  new 28-03-2024_page-0002.jpg",
-      "/Pareena Coban Brochure  new 28-03-2024_page-0003.jpg",
-      "/Pareena Coban Brochure  new 28-03-2024_page-0004.jpg",
-      "/Pareena Coban Brochure  new 28-03-2024_page-0005.jpg",
-      "/Pareena Coban Brochure  new 28-03-2024_page-0006.jpg",
-      "/Pareena Coban Brochure  new 28-03-2024_page-0007.jpg",
-      "/Pareena Coban Brochure  new 28-03-2024_page-0008.jpg",
-      "/Pareena Coban Brochure  new 28-03-2024_page-0009.jpg",
-      "/Pareena Coban Brochure  new 28-03-2024_page-0010.jpg",
-      "/Pareena Coban Brochure  new 28-03-2024_page-0011.jpg",
-      "/Pareena Coban Brochure  new 28-03-2024_page-0012.jpg",
-      "/Pareena Coban Brochure  new 28-03-2024_page-0013.jpg",
-      "/Pareena Coban Brochure  new 28-03-2024_page-0014.jpg",
-      "/Pareena Coban Brochure  new 28-03-2024_page-0015.jpg",
+      "/Abhinandan_lodha.jpg",
+      "/jpg/Prelaunch Opportunity Document_Codename Mumbai T3 Aero-Estate_page-0001.jpg",
+      "/jpg/Prelaunch Opportunity Document_Codename Mumbai T3 Aero-Estate_page-0002.jpg",
+      "/jpg/Prelaunch Opportunity Document_Codename Mumbai T3 Aero-Estate_page-0003.jpg",
+      "/jpg/Prelaunch Opportunity Document_Codename Mumbai T3 Aero-Estate_page-0004.jpg",
+      "/jpg/Prelaunch Opportunity Document_Codename Mumbai T3 Aero-Estate_page-0005.jpg",
+      "/jpg/Prelaunch Opportunity Document_Codename Mumbai T3 Aero-Estate_page-0006.jpg",
+      "/jpg/Prelaunch Opportunity Document_Codename Mumbai T3 Aero-Estate_page-0007.jpg",
+      "/jpg/Prelaunch Opportunity Document_Codename Mumbai T3 Aero-Estate_page-0008.jpg",
+      "/jpg/Prelaunch Opportunity Document_Codename Mumbai T3 Aero-Estate_page-0009.jpg",
+      "/jpg/Prelaunch Opportunity Document_Codename Mumbai T3 Aero-Estate_page-0010.jpg",
     ],
-    bedroom: [
-      "https://via.placeholder.com/600x400?text=Bedroom+1",
-      "https://via.placeholder.com/600x400?text=Bedroom+2",
-    ],
-    kitchen: [
-      "https://via.placeholder.com/600x400?text=Kitchen+1",
-      "https://via.placeholder.com/600x400?text=Kitchen+2",
-      "https://via.placeholder.com/600x400?text=Kitchen+3",
-      "https://via.placeholder.com/600x400?text=Kitchen+4",
-      "https://via.placeholder.com/600x400?text=Kitchen+5",
-      "https://via.placeholder.com/600x400?text=Kitchen+6",
-      "https://via.placeholder.com/600x400?text=Kitchen+7",
-    ],
-    bathroom: [
-      "https://via.placeholder.com/600x400?text=Bathroom+1",
-      "https://via.placeholder.com/600x400?text=Bathroom+2",
-    ],
+    // bedroom: [
+    // "",
+
+    // ],
+    // kitchen: [
+    // "",
+
+    // ],
+    // bathroom: [
+    // "",
+    // "",
+    // ],
   },
-  location: "Sector 93, Gurugram, Haryana, India",
+  location: "mumbai abhinandan",
   mapEmbedUrl:
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7018.310079830329!2d76.92751414605549!3d28.414578303137674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d160474ddc10b%3A0xd6b8829d75aea6fc!2sSector%2093%2C%20Gurugram%2C%20Haryana%20122505!5e0!3m2!1sen!2sin",
+    "https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d241162.8410110724!2d72.70687508039146!3d19.187802473029283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sabhinandhan%20mumbai!5e0!3m2!1sen!2sin!4v1734175477513!5m2!1sen!2sin",
 };
 
 // Helper functions for icons and title case conversion
+const getIcon = (section) => {
+  switch (section) {
+    case "overview":
+      return <Eye className="w-5 h-5" />;
+    case "site-plan":
+      return <Layout className="w-5 h-5" />;
+    case "amenities":
+      return <List className="w-5 h-5" />;
+    case "gallery":
+      return <Image className="w-5 h-5" />;
+    case "location":
+      return <Map className="w-5 h-5" />;
+    default:
+      return null;
+  }
+};
 
 const toTitleCase = (str) =>
   str.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
@@ -277,16 +289,15 @@ const ContactModal = ({ isOpen, toggleContactModal }) => {
   };
 
   return isOpen ? (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 ">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
       <div
-        className={`bg-white rounded-2xl shadow-lg w-[90%] lg:max-w-4xl mx-auto  p-8 flex flex-col md:flex-row transition-all duration-500 ease-in-out ${
-          isExiting ? "opacity-0" : "opacity-100"
-        }`}
+        className={`bg-white rounded-2xl shadow-lg w-[90%] lg:max-w-4xl mx-auto p-8 flex flex-col md:flex-row transition-all duration-500 ease-in-out ${isExiting ? "opacity-0" : "opacity-100"
+          }`}
       >
         {/* Left Section: Image (hidden on mobile and tablet) */}
         <div className="w-full md:w-1/2 mb-8 md:mb-0 hidden md:block">
           <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRo9qE01gKtTonUxusOPI2QxfUFyIwCgJW_TQ&s" // Replace with your desired image URL
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRo9qE01gKtTonUxusOPI2QxfUFyIwCgJW_TQ&s"
             alt="Placeholder"
             className="w-full h-full object-contain rounded-2xl"
           />
@@ -295,7 +306,7 @@ const ContactModal = ({ isOpen, toggleContactModal }) => {
         {/* Right Section: Form */}
         <div className="lg:max-w-2xl max-w-2xl md:max-w-2xl pl-0 md:pl-8">
           <div className="flex justify-between items-center mb-8">
-            <h2 className="text-3xl font-semibold text-gray-800">Get in Touch</h2>
+            <h2 className="text-3xl font-semibold text-gray-800">Get Enquiry</h2>
             <button
               onClick={handleClose}
               className="text-gray-600 hover:text-gray-800 transition-all duration-300"
@@ -314,9 +325,8 @@ const ContactModal = ({ isOpen, toggleContactModal }) => {
                   type="text"
                   id="name"
                   placeholder="Your Name"
-                  className={`mt-2 w-full px-4 py-3 border-b outline-none ${
-                    errors.name ? "border-red-600" : "border-gray-300"
-                  } rounded-md text-black`}
+                  className={`mt-2 w-full px-4 py-3 border-b outline-none ${errors.name ? "border-red-600" : "border-gray-300"
+                    } rounded-md text-black`}
                   {...register("name", {
                     maxLength: 80,
                   })}
@@ -335,9 +345,8 @@ const ContactModal = ({ isOpen, toggleContactModal }) => {
                   type="email"
                   id="email"
                   placeholder="Your Email"
-                  className={`mt-2 w-full px-4 py-3 border-b outline-none ${
-                    errors.email ? "border-red-600" : "border-gray-300"
-                  } rounded-md text-black`}
+                  className={`mt-2 w-full px-4 py-3 border-b outline-none ${errors.email ? "border-red-600" : "border-gray-300"
+                    } rounded-md text-black`}
                   {...register("email", {
                     pattern: {
                       value: /^\S+@\S+$/i,
@@ -362,9 +371,8 @@ const ContactModal = ({ isOpen, toggleContactModal }) => {
                   type="tel"
                   id="phone"
                   placeholder="Your Phone"
-                  className={`w-full px-4 py-3 border-b outline-none ${
-                    errors.phone ? "border-red-600" : "border-gray-300"
-                  } rounded-md pl-10 text-black`}
+                  className={`w-full px-4 py-3 border-b outline-none ${errors.phone ? "border-red-600" : "border-gray-300"
+                    } rounded-md pl-10 text-black`}
                   {...register("phone", {
                     required: "Enter your phone number",
                   })}
@@ -379,15 +387,14 @@ const ContactModal = ({ isOpen, toggleContactModal }) => {
 
             <div>
               <label htmlFor="comment" className="block text-sm font-medium text-gray-700">
-                <span className="text-gray-600">Comment</span>
+                <span className="text-gray-600">Your Budget</span>
               </label>
               <div className="relative mt-2">
                 <textarea
                   id="comment"
                   placeholder="Your Message"
-                  className={`w-full px-4 py-3 border-b outline-none ${
-                    errors.comment ? "border-red-600" : "border-gray-300"
-                  } rounded-md pl-10 text-black`}
+                  className={`w-full px-4 py-3 border-b outline-none ${errors.comment ? "border-red-600" : "border-gray-300"
+                    } rounded-md pl-10 text-black`}
                   {...register("comment", {
                     maxLength: 500,
                   })}
@@ -400,20 +407,6 @@ const ContactModal = ({ isOpen, toggleContactModal }) => {
               )}
             </div>
 
-            <div className="flex justify-between items-center">
-              <div className="flex items-center space-x-2">
-                <input
-                  type="checkbox"
-                  id="consent"
-                  className="h-4 w-4 text-blue-600"
-                  {...register("consent", { required: true })}
-                />
-                <label htmlFor="consent" className="text-sm text-gray-600">
-                  I authorize company representatives to Call, SMS, Email or WhatsApp me.
-                </label>
-              </div>
-            </div>
-
             <div className="flex justify-end space-x-4 mt-6">
               <button
                 type="submit"
@@ -424,7 +417,7 @@ const ContactModal = ({ isOpen, toggleContactModal }) => {
                   <span>Submitting...</span>
                 ) : (
                   <>
-                    <CheckCircle className="w-5 h-5" /> <span>Submit</span>
+                    <CheckCircle className="w-5 h-5" /> <span>Message</span>
                   </>
                 )}
               </button>
@@ -433,11 +426,10 @@ const ContactModal = ({ isOpen, toggleContactModal }) => {
 
           {isSubmitSuccessful && (
             <div
-              className={`mt-8 px-6 py-4 rounded-md shadow-md text-center transition-all duration-300 ${
-                isSuccess
-                  ? "bg-green-100 text-green-800 border border-green-300"
-                  : "bg-red-100 text-red-800 border border-red-300"
-              }`}
+              className={`mt-8 px-6 py-4 rounded-md shadow-md text-center transition-all duration-300 ${isSuccess
+                ? "bg-green-100 text-green-800 border border-green-300"
+                : "bg-red-100 text-red-800 border border-red-300"
+                }`}
             >
               {isSuccess ? (
                 <>
@@ -472,7 +464,7 @@ const AmenitiesSection = ({ toggleContactModal }) => {
         </h2>
 
         {/* Amenities List */}
-        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12"  onClick={toggleContactModal} >
+        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12" onClick={toggleContactModal} >
           {property.amenities.map((amenity, index) => (
             <li
               key={index}
@@ -522,9 +514,8 @@ const Carousel = ({ images }) => {
           key={index}
           src={image}
           alt={`Slide ${index + 1}`}
-          className={`absolute top-0 left-0 w-full h-auto max-w-full transition-opacity duration-1000 ${
-            index === current ? "opacity-100" : "opacity-0"
-          }`}
+          className={`absolute top-0 left-0 w-full h-auto max-w-full transition-opacity duration-1000 ${index === current ? "opacity-100" : "opacity-0"
+            }`}
         />
       ))}
     </div>
@@ -554,9 +545,9 @@ const App = () => {
   useEffect(() => {
     AOS.init({
       duration: 1000, // Animation duration
-      offset: 100,    // Offset (in px) from the original trigger point
+      offset: 100, // Offset (in px) from the original trigger point
       easing: "ease-in-out", // Easing function
-      once: true,      // Whether animation should happen only once - while scrolling down
+      once: true, // Whether animation should happen only once - while scrolling down
     });
   }, []);
 
@@ -615,286 +606,314 @@ const App = () => {
 
     return () => clearInterval(interval); // Cleanup on unmount
   }, [isHovered, galleryImages]);
- 
+
 
 
   return (
     <div className="bg-gray-50">
-     <Header toggleContactModal={toggleContactModal} />
+      <Header toggleContactModal={toggleContactModal} />
       <ContactModal
         isOpen={isContactModalOpen}
         toggleContactModal={toggleContactModal}
       />
-  
-    {/* Property Overview */}
-    <section
-  id="overview"
-  className="py-24 px-6 sm:px-8 bg-gradient-to-r from-[#f8f9fa] via-[#e5e8eb] to-[#d0d7db] relative"
-  data-aos="fade-up"
->
-  <div className="max-w-7xl mx-auto flex flex-col-reverse sm:flex-row items-center space-y-12 sm:space-y-0 sm:space-x-12">
-    
-    {/* Left Side - Image with Overlay */}
-    <div className="relative flex-none sm:w-1/2">
-      <img
-        src="/Pareena Coban Brochure  new 28-03-2024_page-0003.jpg" // Replace with your image URL
-        alt="Property Image"
-        className="w-full h-auto rounded-xl shadow-xl object-cover"
-      />
-      <div className="absolute inset-0 bg-black opacity-40 rounded-xl"></div> {/* Overlay Effect */}
-    </div>
 
-    {/* Right Side - Text */}
-    <div className="flex-1 space-y-4 sm:space-y-6">
-      <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-800 leading-tight text-center sm:text-left">
-        Coban. 10.58 Acres of Pure Bliss.
-      </h1>
-      <p className="text-lg text-gray-600 leading-relaxed text-center sm:text-left">
-        Our homes are more than mere structures; they're gateways to a life well-lived. 
-        Welcome to a place where your dreams find their address. With more than 200 families 
-        already living in Coban, join us as we launch two new towers today.
-      </p>
-
-      {/* Property Features */}
-      <ul className="space-y-2 text-gray-700 text-lg list-disc pl-6 text-center sm:text-left">
-        <li>• Gateway to a fulfilling life</li>
-        <li>• Luxury living spaces</li>
-        <li>• Surrounded by greenery and ample amenities</li>
-        <li>• Located in the heart of the city</li>
-      </ul>
-
-      {/* Call to Action */}
-      <div className="text-center sm:text-left">
-        <a
-          href="#contact"
-          className="inline-block px-8 py-3 mt-6 text-lg font-semibold text-white bg-gradient-to-r from-blue-600 to-blue-400 rounded-lg shadow-lg hover:from-blue-700 hover:to-blue-500 transition-all duration-300"
-        >
-          Book a Visit
-        </a>
-      </div>
-    </div>
-  </div>
-    </section>
-
-    {/* Gallery Section */}
-    <section
-  id="gallery"
-  className="py-16 px-4 sm:px-8 bg-gradient-to-br from-gray-100 to-gray-200"
->
-  <div className="max-w-7xl mx-auto">
-    {/* Section Title */}
-    <div className="text-left mb-12">
-      <h2 className="text-5xl font-extrabold text-gray-800 tracking-wide">
-        <span className="bg-clip-text text-black bg-gradient-to-r from-blue-500 to-green-500">
-          Property Gallery
-        </span>
-      </h2>
-      <p className="text-lg text-gray-600 mt-4">
-      plot for sale in mumbai .
-      </p>
-    </div>
-
-    {/* Modern Background with Inset Shadow */}
-    <div
-      className="relative py-8 px-6 bg-white rounded-xl shadow-inner"
-      onMouseEnter={() => setIsHovered(true)} // Pause autoplay on hover
-      onMouseLeave={() => setIsHovered(false)} // Resume autoplay on leave
-    >
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-green-50 opacity-50 blur-sm rounded-xl"></div>
-
-      {/* Horizontal Scrollable Image Row */}
-      <div
-        ref={galleryRef}
-        className="flex space-x-6 overflow-x-auto scrollbar-hide p-4"
+      {/* Property Overview */}
+      <section
+        id="overview"
+        className="py-16 px-4 sm:px-8 bg-gradient-to-r from-white via-gray-200 to-white"
+        data-aos="fade-up"
       >
-        {galleryImages.map((image, index) => (
+        <div className="max-w-6xl mx-auto space-y-12">
+
+
+          {/* Property Details */}
           <div
-            key={index}
-            className="flex-none w-80 sm:w-96 lg:w-[500px] relative overflow-hidden rounded-xl shadow-lg bg-gradient-to-b from-gray-50 to-gray-100 hover:shadow-2xl hover:bg-gradient-to-t from-gray-700 via-gray-500 to-gray-300 transform transition-all duration-300"
-            onClick={() => handleViewImage(image)}
-            data-aos="zoom-in"
+            className="flex flex-col justify-center space-y-6 border-l-4 border-t-4 rounded-3xl shadow-md w-full border-blue-600 p-8 bg-white"
+            data-aos="fade-left"
           >
-            <img
-              src={image}
-              alt={`Gallery Image ${index + 1}`}
-              className="w-full h-64 sm:h-80 lg:h-96 object-contain rounded-t-xl"
-            />
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-0 hover:opacity-80 transition-opacity duration-300 rounded-xl">
-              <div className="absolute bottom-6 left-6 text-white">
-                <p className="font-semibold text-lg">Luxury Property</p>
-                <p className="text-sm opacity-75">Click to view details</p>
+            {/* Video Section */}
+            <div
+              className="relative rounded-lg overflow-hidden shadow-lg border border-gray-200 hover:border-blue-600 transition duration-300"
+              data-aos="fade-right"
+            >
+              <video
+                className="w-full object-cover rounded-lg"
+                autoPlay
+                controls
+                loop
+                muted
+                playsInline
+                poster=""
+              >
+                <source src="/k.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <h1 className="text-5xl font-extrabold text-gray-800">
+              Codename Mumbai T3 Aero-Estate
+            </h1>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              A 50-acre premier development located at Khopoli, just 40 mins from Navi Mumbai International Airport and 10 mins from the Mumbai-Pune Expressway. This once-in-a-century investment opportunity offers the potential for 3.87X returns in 6 years.
+            </p>
+            <ul className="space-y-4 text-gray-700 text-lg">
+              <li>• Massive 30,000 sq. ft. hilltop clubhouse</li>
+              <li>• Over 50+ world-class amenities</li>
+              <li>• Carbon-negative development with abundant greenery</li>
+              <li>• Close to the 90,000+ acre NAINA smart city</li>
+              <li>• Early booking benefits worth ₹1 Lakh</li>
+            </ul>
+            <div className="flex items-center space-x-6 pt-4">
+              <div className="flex items-center space-x-2">
+                <MapPin className="w-6 h-6 text-blue-600" />
+                <span className="text-lg font-medium text-gray-800">
+                  Khopoli, Navi Mumbai
+                </span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <span className="text-3xl font-semibold text-blue-600">
+                  ₹89.99 Lakh Onwards
+                </span>
               </div>
             </div>
           </div>
-        ))}
-      </div>
-    </div>
-  </div>
+        </div>
+      </section>
 
-  {/* Modal for Viewing Image */}
-  {isModalOpen && (
-    <div className="fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center">
-      <div className={`relative bg-white rounded-lg shadow-lg overflow-hidden max-w-4xl`}>
-        <button
-          className="absolute top-4 right-4 bg-gray-800 text-white p-2 rounded-full hover:bg-gray-600 transition"
-          onClick={closeModal}
-        >
-          <X />
-        </button>
-        <img
-          src={selectedImage}
-          alt="Selected"
-          className="w-full max-h-[80vh] object-contain"
-        />
-      </div>
-    </div>
-  )}
-    </section>
 
- 
-    {/* Site Plan */}
-    <section
-  id="site-plan"
-  className="py-12 sm:py-16 px-6 sm:px-10 bg-gradient-to-b from-gray-100 to-gray-200 relative"
-  data-aos="fade-up"
-  onClick={toggleContactModal}
->
-  <div className="max-w-7xl mx-auto relative">
-    {/* Section Header */}
-    <div className="text-left mb-8 sm:mb-12 px-4">
-      <h2
-        className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight leading-tight"
-        data-aos="fade-right"
-        data-aos-delay="200"
+      {/* Gallery Section */}
+      <section
+        id="gallery"
+        className="py-16 px-4 sm:px-8 bg-gradient-to-br from-gray-100 to-gray-200"
       >
-        <span className="bg-clip-text text-black bg-gradient-to-r from-blue-500 to-green-500">
-          Luxurious Site Plan
-        </span>
-      </h2>
-      <p
-        className="text-base sm:text-lg lg:text-xl text-gray-600 mt-4"
-        data-aos="fade-right"
-        data-aos-delay="300"
+        <div className="max-w-7xl mx-auto">
+          {/* Section Title */}
+          <div className="text-left mb-12">
+            <h2 className="text-5xl font-extrabold text-gray-800 tracking-wide">
+              <span className="bg-clip-text text-black bg-gradient-to-r from-blue-500 to-green-500">
+                Property Gallery
+              </span>
+            </h2>
+            <p className="text-lg text-gray-600 mt-4">
+              plot for sale in mumbai .
+            </p>
+          </div>
+
+          {/* Modern Background with Inset Shadow */}
+          <div
+            className="relative py-8 px-6 bg-white rounded-xl shadow-inner"
+            onMouseEnter={() => setIsHovered(true)} // Pause autoplay on hover
+            onMouseLeave={() => setIsHovered(false)} // Resume autoplay on leave
+          >
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-green-50 opacity-50 blur-sm rounded-xl"></div>
+
+            {/* Horizontal Scrollable Image Row */}
+            <div
+              ref={galleryRef}
+              className="flex space-x-6 overflow-x-auto scrollbar-hide p-4"
+            >
+              {galleryImages.map((image, index) => (
+                <div
+                  key={index}
+                  className="flex-none w-80 sm:w-96 lg:w-[500px] relative overflow-hidden rounded-xl shadow-lg bg-gradient-to-b from-gray-50 to-gray-100 hover:shadow-2xl hover:bg-gradient-to-t from-gray-700 via-gray-500 to-gray-300 transform transition-all duration-300"
+                  onClick={() => handleViewImage(image)}
+                  data-aos="zoom-in"
+                >
+                  <img
+                    src={image}
+                    alt={`Gallery Image ${index + 1}`}
+                    className="w-full h-64 sm:h-80 lg:h-96 object-cover rounded-t-xl"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-0 hover:opacity-80 transition-opacity duration-300 rounded-xl">
+                    <div className="absolute bottom-6 left-6 text-white">
+                      <p className="font-semibold text-lg">Luxury Property</p>
+                      <p className="text-sm opacity-75">Click to view details</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Modal for Viewing Image */}
+        {isModalOpen && (
+          <div className="fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center">
+            <div className={`relative bg-white rounded-lg shadow-lg overflow-hidden max-w-4xl`}>
+              <button
+                className="absolute top-4 right-4 bg-gray-800 text-white p-2 rounded-full hover:bg-gray-600 transition"
+                onClick={closeModal}
+              >
+                <X />
+              </button>
+              <img
+                src={selectedImage}
+                alt="Selected"
+                className="w-full max-h-[80vh] object-contain"
+              />
+            </div>
+          </div>
+        )}
+      </section>
+
+
+      {/* Site Plan */}
+      <section
+        id="site-plan"
+        className="py-12 sm:py-16 px-6 sm:px-10 bg-gradient-to-b from-gray-100 to-gray-200 relative"
+        data-aos="fade-up"
+        onClick={toggleContactModal}
       >
-        Plot rate in Mumbai.
-      </p>
-    </div>
+        <div className="max-w-7xl mx-auto relative">
+          {/* Section Header */}
+          <div className="text-left mb-8 sm:mb-12 px-4">
+            <h2
+              className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight leading-tight"
+              data-aos="fade-right"
+              data-aos-delay="200"
+            >
+              <span className="bg-clip-text text-black bg-gradient-to-r from-blue-500 to-green-500">
+                Luxurious Site Plan
+              </span>
+            </h2>
+            <p
+              className="text-base sm:text-lg lg:text-xl text-gray-600 mt-4"
+              data-aos="fade-right"
+              data-aos-delay="300"
+            >
+              Plot rate in Mumbai.
+            </p>
+          </div>
 
-    {/* Site Plan Image */}
-    <div
-      className="relative rounded-2xl overflow-hidden border border-gray-200  transition-all duration-700 transform hover:scale-105"
-      data-aos="zoom-in"
-      data-aos-delay="400"
-    >
-      {/* Image */}
-      <img
-        src={property.sitePlan}
-        alt="Luxury Site Plan"
-        className="w-full h-[250px] sm:h-[400px] md:h-[450px] lg:h-[500px] object-contain rounded-2xl"
-      />
-    </div>
-  </div>
-    </section>
+          {/* Site Plan Images */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6" data-aos="zoom-in" data-aos-delay="400">
+            {property.sitePlan.map((image, index) => (
+              <div
+                key={index}
+                className="relative overflow-hidden transition-all duration-700 transform hover:scale-105"
+              >
+                <img
+                  src={image}
+                  alt={`Luxury Site Plan ${index + 1}`}
+                  className="w-full h-[250px] sm:h-[400px] md:h-[450px] lg:h-[500px] object-contain rounded-2xl"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
 
-    {/* Amenities */}
-    <AmenitiesSection toggleContactModal={toggleContactModal}/>
-  
-    {/* Location */}
-    <section
-  id="location"
-  className="py-12 sm:py-16 px-6 sm:px-12 bg-gradient-to-br from-gray-100 to-gray-300 relative"
-  data-aos="fade-up"
->
-  <div className="max-w-7xl mx-auto relative">
-    {/* Decorative Background */}
-    <div className="absolute inset-0 -z-10 bg-gradient-to-tr from-blue-200 via-gray-100 to-green-200 rounded-lg blur-xl opacity-60 pointer-events-none sm:w-96 sm:h-96 w-80 h-80"></div>
 
-    {/* Section Header */}
-    <div className="text-left mb-8 sm:mb-12">
-      <h2
-        className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight leading-tight"
-        data-aos="fade-right"
-        data-aos-delay="200"
+
+
+
+
+
+      {/* Amenities */}
+      <AmenitiesSection toggleContactModal={toggleContactModal} />
+
+      {/* Location */}
+      <section
+        id="location"
+        className="py-12 sm:py-16 px-6 sm:px-12 bg-gradient-to-br from-gray-50 to-gray-100 relative"
+        data-aos="fade-up"
       >
-        <span className="bg-clip-text text-black bg-gradient-to-r from-blue-600 to-green-500">
-          Prime Location
-        </span>
-      </h2>
-      <p
-        className="text-sm sm:text-base lg:text-lg text-gray-600 mt-4"
-        data-aos="fade-left"
-        data-aos-delay="300"
+        <div className="max-w-7xl mx-auto relative">
+          {/* Decorative Background */}
+          <div className="absolute inset-0 -z-10 bg-gradient-to-tr from-blue-100 via-gray-50 to-green-100 rounded-lg shadow-lg blur-xl opacity-70 pointer-events-none sm:w-96 sm:h-96 w-80 h-80"></div>
+
+          {/* Section Header */}
+          <div className="text-left mb-8 sm:mb-12">
+            <h2
+              className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight leading-tight"
+              data-aos="fade-right"
+              data-aos-delay="200"
+            >
+              <span className="bg-clip-text text-black bg-gradient-to-r from-blue-600 to-green-500">
+                Prime Location
+              </span>
+            </h2>
+            <p
+              className="text-sm sm:text-base lg:text-lg text-gray-600 mt-4"
+              data-aos="fade-left"
+              data-aos-delay="300"
+            >
+              {property.location}
+            </p>
+          </div>
+
+          {/* Map Section */}
+          <div
+            className="relative rounded-3xl overflow-hidden border border-gray-200 transition-all duration-700 transform hover:scale-105 cursor-pointer"
+            data-aos="zoom-in"
+            data-aos-delay="400"
+            onClick={toggleContactModal} // Trigger contact modal on click
+          >
+            {/* Embedded Map */}
+            <iframe
+              title="Property Location"
+              src={property.mapEmbedUrl}
+              className="w-full h-[250px] sm:h-[350px] lg:h-[450px] xl:h-[500px] rounded-3xl pointer-events-none" // Responsive iframe height
+              allowFullScreen
+              loading="lazy"
+            ></iframe>
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/30 to-black/50 opacity-0 hover:opacity-100 transition-opacity duration-700 rounded-3xl pointer-events-none"></div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-gray-300 py-8 px-4 sm:px-8" data-aos="fade-up">
+        <div className="max-w-7xl mx-auto">
+          {/* Links Section */}
+          <ul className="flex justify-center space-x-6 mb-4" data-aos="fade-up">
+            <li>
+              <a href="#privacy-policy" className="hover:text-blue-500 transition">
+                Privacy Policy
+              </a>
+            </li>
+            <li>
+              <a href="#terms-conditions" className="hover:text-blue-500 transition">
+                Terms & Conditions
+              </a>
+            </li>
+          </ul>
+
+          {/* Divider */}
+          <div className="border-t border-gray-700 my-6"></div>
+
+          {/* Disclaimer Section */}
+          <div className="text-center text-sm text-gray-400 leading-relaxed" data-aos="fade-up">
+            <p className="mb-4">
+              Disclaimer: The content provided on this website is for informational purposes only and does not constitute an offer to avail any service. The prices mentioned are subject to change without prior notice, and the availability of properties mentioned is not guaranteed.
+            </p>
+            <p>
+              Users are advised to conduct independent research and due diligence before making any decisions.
+            </p>
+          </div>
+
+          {/* Divider */}
+          <div className="border-t border-gray-700 my-6"></div>
+
+          {/* Copyright Section */}
+          <div className="text-center text-sm text-gray-500" data-aos="fade-up">
+            © {new Date().getFullYear()} Propcodes. All rights reserved.
+          </div>
+        </div>
+      </footer>
+
+
+      <button
+        onClick={toggleContactModal}
+        className="fixed bottom-24 right-8 bg-blue-800 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition"
       >
-        {property.location}
-      </p>
-    </div>
-
-    {/* Map Section */}
-    <div
-      className="relative rounded-3xl overflow-hidden border border-gray-200 transition-all duration-700 transform hover:scale-105 cursor-pointer"
-      data-aos="zoom-in"
-      data-aos-delay="400"
-      onClick={toggleContactModal} // Trigger contact modal on click
-    >
-      {/* Embedded Map */}
-      <iframe
-        title="Property Location"
-        src={property.mapEmbedUrl}
-        className="w-full h-[250px] sm:h-[350px] lg:h-[450px] xl:h-[500px] rounded-3xl pointer-events-none" // Responsive iframe height
-        allowFullScreen
-        loading="lazy"
-      ></iframe>
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/30 to-black/50 opacity-0 hover:opacity-100 transition-opacity duration-700 rounded-3xl pointer-events-none"></div>
-    </div>
-  </div>
-    </section>
+        <MessageCircle className="w-5 h-5" />
+      </button>
 
 
-    {/* Footer */}
-    <footer className="bg-gray-900 text-gray-300 py-8 px-4 sm:px-8" data-aos="fade-up">
-  <div className="max-w-7xl mx-auto">
-    {/* Links Section */}
-    <ul className="flex justify-center space-x-6 mb-4" data-aos="fade-up">
-      <li>
-        <a href="#privacy-policy" className="hover:text-blue-500 transition">
-          Privacy Policy
-        </a>
-      </li>
-      <li>
-        <a href="#terms-conditions" className="hover:text-blue-500 transition">
-          Terms & Conditions
-        </a>
-      </li>
-    </ul>
-
-    {/* Divider */}
-    <div className="border-t border-gray-700 my-6"></div>
-
-    {/* Disclaimer Section */}
-    <div className="text-center text-sm text-gray-400 leading-relaxed" data-aos="fade-up">
-      <p className="mb-4">
-        Disclaimer: The content provided on this website is for informational purposes only and does not constitute an offer to avail any service. The prices mentioned are subject to change without prior notice, and the availability of properties mentioned is not guaranteed.
-      </p>
-      <p>
-        Users are advised to conduct independent research and due diligence before making any decisions.
-      </p>
-    </div>
-
-    {/* Divider */}
-    <div className="border-t border-gray-700 my-6"></div>
-
-    {/* Copyright Section */}
-    <div className="text-center text-sm text-gray-500" data-aos="fade-up">
-      © {new Date().getFullYear()} Propcodes. All rights reserved.
-    </div>
-  </div>
-    </footer>
-
-    
-   {/* Scroll to Top Button */}
-   {showScrollTop && (
+      {/* Scroll to Top Button */}
+      {showScrollTop && (
         <button
           onClick={scrollToTop}
           className="fixed bottom-8 right-8 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition"
@@ -903,7 +922,7 @@ const App = () => {
         </button>
       )}
     </div>
-  
+
   );
 };
 

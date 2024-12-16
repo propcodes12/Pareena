@@ -852,7 +852,7 @@ const App = () => {
             {/* Embedded Map */}
             <iframe
               title="Property Location"
-              src=src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3799.504601495537!2d73.18871487499445!3d17.76796668318555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be9c3047ad55683%3A0x837e78c9f1260bd2!2sAbhinandan%20lodha%20group!5e0!3m2!1sen!2sin!4v1734329196429!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3799.504601495537!2d73.18871487499445!3d17.76796668318555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be9c3047ad55683%3A0x837e78c9f1260bd2!2sAbhinandan%20lodha%20group!5e0!3m2!1sen!2sin!4v1734329196429!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
               className="w-full h-[250px] sm:h-[350px] lg:h-[450px] xl:h-[500px] rounded-3xl pointer-events-none" // Responsive iframe height
               allowFullScreen
               loading="lazy"

@@ -852,7 +852,7 @@ const App = () => {
             {/* Embedded Map */}
             <iframe
               title="Property Location"
-              src={property.mapEmbedUrl}
+              src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d241162.8410110724!2d72.70687508039146!3d19.187802473029283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sabhinandhan%20mumbai!5e0!3m2!1sen!2sin!4v1734175477513!5m2!1sen!2sin"
               className="w-full h-[250px] sm:h-[350px] lg:h-[450px] xl:h-[500px] rounded-3xl pointer-events-none" // Responsive iframe height
               allowFullScreen
               loading="lazy"

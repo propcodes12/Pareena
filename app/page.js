@@ -195,7 +195,7 @@ const property = {
 
   gallery: {
     "living-room": [
-      "/Abhinandan_lodha.jpg",
+      
       "/jpg/Prelaunch Opportunity Document_Codename Mumbai T3 Aero-Estate_page-0001.jpg",
       "/jpg/Prelaunch Opportunity Document_Codename Mumbai T3 Aero-Estate_page-0002.jpg",
       "/jpg/Prelaunch Opportunity Document_Codename Mumbai T3 Aero-Estate_page-0003.jpg",
@@ -650,7 +650,7 @@ const App = () => {
               </video>
             </div>
             <h1 className="text-5xl font-extrabold text-gray-800">
-              Codename Mumbai T3 Aero-Estate
+              Mumbai T3 Aero-Estate
             </h1>
             <p className="text-lg text-gray-600 leading-relaxed">
               A 50-acre premier development located at Khopoli, just 40 mins from Navi Mumbai International Airport and 10 mins from the Mumbai-Pune Expressway. This once-in-a-century investment opportunity offers the potential for 3.87X returns in 6 years.
@@ -780,7 +780,7 @@ const App = () => {
               data-aos="fade-right"
               data-aos-delay="300"
             >
-              Plot rate in Mumbai.
+              Live Positivity in Mumbai.
             </p>
           </div>
 
